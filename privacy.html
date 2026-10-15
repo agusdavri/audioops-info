@@ -23,19 +23,25 @@
 
   <h2>2. Quali dati tratta l'app</h2>
   <ul>
-    <li><strong>Dati di lavoro inseriti dagli utenti</strong>: inventario, eventi, kit, documenti di trasporto, anagrafica dello staff tecnico (nome, ruolo, telefono, email), foto delle attrezzature.</li>
-    <li><strong>Dati dell'account Google</strong> (solo se si effettua l'accesso): nome e indirizzo email, usati per mostrare il profilo nell'app.</li>
+    <li><strong>Dati di lavoro inseriti dagli utenti</strong>: inventario, eventi, kit, clienti e location, documenti di trasporto, allegati degli eventi, anagrafica dello staff tecnico (nome, ruolo, telefono, email), turni e disponibilità, foto delle attrezzature.</li>
+    <li><strong>Dati riservati dello staff</strong> (inseriti dall'amministratore): codice fiscale, data e luogo di nascita, residenza, contatto di emergenza, documento d'identità e scadenze. Sono visibili solo agli amministratori.</li>
+    <li><strong>Compensi e preventivi</strong>: sono cifrati sul dispositivo con un codice di recupero che resta all'amministratore. Il server conserva solo dati cifrati e non può leggerli.</li>
+    <li><strong>Dati dell'account Google</strong> (solo se si effettua l'accesso): nome, indirizzo email e immagine del profilo, usati per riconoscerti e assegnarti il ruolo scelto dall'amministratore.</li>
+    <li><strong>Storico delle modifiche</strong>: chi ha modificato un dato e quando (solo il nome del campo, non il contenuto), visibile agli amministratori.</li>
   </ul>
 
   <h2>3. Dove vengono conservati</h2>
   <ul>
-    <li>Sul dispositivo dell'utente.</li>
+    <li>Sul server di InScena, nell'Unione Europea (Francoforte): database e autenticazione su <a href="https://neon.com">Neon</a>, foto e allegati nello spazio file di Neon nella stessa regione.</li>
+    <li>La web app è ospitata su <a href="https://vercel.com">Vercel</a>, con elaborazione a Francoforte.</li>
+    <li>Sul dispositivo dell'utente (copia per lavorare anche senza connessione).</li>
     <li>Nel Google Drive dell'amministratore, nella cartella «AudioOps Backups» (nome storico della cartella), sotto forma di file di backup.</li>
   </ul>
-  <p>InScena <strong>non dispone di server propri</strong>: nessun dato viene inviato allo sviluppatore o a terzi, né usato per pubblicità, profilazione o analisi.</p>
+  <p>Ai dati accedono solo le persone invitate dall'amministratore, ognuna con il proprio ruolo (ad esempio un tecnico vede solo gli eventi a cui è assegnato). I dati non vengono venduti né usati per pubblicità, profilazione o analisi. Neon, Vercel e Google trattano i dati solo per fornire i loro servizi (database, hosting, accesso e backup).</p>
 
   <h2>4. Uso dei dati Google</h2>
-  <p>L'app richiede questi accessi a Google Drive:</p>
+  <p>L'accesso con Google al server di InScena usa solo nome, email e immagine del profilo.</p>
+  <p>Per i backup l'app richiede questi accessi a Google Drive:</p>
   <ul>
     <li><code>drive.file</code>: creare, leggere ed eliminare <em>solo</em> i file di backup creati dall'app;</li>
     <li><code>drive.readonly</code>: trovare e scaricare la cartella di backup che un amministratore ha condiviso con l'utente.</li>
@@ -52,6 +58,8 @@
 
   <h2>6. Conservazione e cancellazione</h2>
   <ul>
+    <li>Dati sul server: restano finché l'amministratore li elimina. Gli elementi eliminati restano nel cestino per 90 giorni e poi vengono cancellati definitivamente. Lo storico delle modifiche viene conservato per un anno.</li>
+    <li>Accesso al server: l'amministratore può togliere l'accesso a un utente in ogni momento.</li>
     <li>Dati sul dispositivo: si cancellano disinstallando l'app.</li>
     <li>Backup su Drive: si cancellano eliminando la cartella «AudioOps Backups». L'app tiene automaticamente un numero limitato di backup e sposta quelli vecchi nel cestino di Drive.</li>
     <li>Accesso Google: si revoca da <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>.</li>
