@@ -24,6 +24,8 @@
   var fallback = "https://audioops-web.vercel.app/";
   var done = false;
   function go(url) { if (done) return; done = true; document.getElementById("link").href = url; location.replace(url); }
+  // In attesa del dominio su Neon Auth: si va su Vercel. Togliere la riga sotto quando app.inscenaapp.it accetta il login.
+  go(fallback);
   var probe = new Image();
   probe.onload = function () { go(main); };
   probe.onerror = function () { go(fallback); };
